@@ -1,0 +1,18 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+}
+
+.header-search-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.header-add-recipe-button {
+  @extend .header-search-button;
+  margin: unset;
+}

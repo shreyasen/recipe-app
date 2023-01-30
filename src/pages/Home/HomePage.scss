@@ -1,0 +1,23 @@
+.home-page-container {
+  text-align: center;
+}
+.home-page-header {
+  // background-image: url('../../assets/common-background.png');
+  // background-size: cover;
+  // background-position: center;
+  padding-bottom: 5rem;
+}
+.home-page-title {
+  font-family: serif;
+  font-size: 5rem;
+}
+.home-page-subtitle {
+  font-size: 2rem;
+}
+.get-started-button {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  cursor: pointer;
+}

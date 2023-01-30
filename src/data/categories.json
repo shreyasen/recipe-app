@@ -1,0 +1,64 @@
+[
+  {
+    "id": "6c2822b3-3be3-4e33-a956-a40e00b5f692",
+    "title": "fried rice",
+    "mealTime": "dinner",
+    "cookingTime": 45,
+    "difficultyLevel": "MEDIUM",
+    "ingredients": [
+      "2 cups cooked rice",
+      "2 tablespoons oil (vegetable or olive oil)",
+      "1 small onion, diced",
+      "2 cloves garlic, minced",
+      "1 cup diced vegetables (carrots, peas, corn)",
+      "2 eggs, lightly beaten",
+      "2 tablespoons soy sauce",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Heat oil in a large pan or wok over medium heat.",
+      "Add onion and garlic and cook until softened, about 2 minutes.",
+      "Add diced vegetables and cook until tender, about 3 minutes.",
+      "Push the vegetables to one side of the pan and pour the beaten eggs on the other side. Scramble until fully cooked.",
+      "Add the cooked rice and stir to combine with the vegetables and eggs.",
+      "Stir in soy sauce and season with salt and pepper to taste.",
+      "Cook for an additional 2-3 minutes, until heated through and evenly mixed.",
+      "Serve hot."
+    ]
+  },
+  {
+    "id": "06c55913-4877-42ac-a92e-646d26ed8799",
+    "title": "salad",
+    "mealTime": "lunch",
+    "cookingTime": 15,
+    "difficultyLevel": "EASY",
+    "ingredients": [
+      "onion",
+      "carrot",
+      "beans",
+      "cucumber",
+      "beat",
+      "meonise",
+      "salt"
+    ],
+    "instructions": []
+  },
+  {
+    "id": "e3a9f6f9-105b-423b-b80e-c2aa24b359fd",
+    "title": "cornflakes",
+    "mealTime": "breakfast",
+    "cookingTime": 5,
+    "difficultyLevel": "EASY",
+    "ingredients": ["cornflakes", "milk", "honey", "dryfruits"],
+    "instructions": []
+  },
+  {
+    "id": "37d8c8d2-6dff-4486-b01f-c6a9ee5e47d7",
+    "title": "oats",
+    "mealTime": "breakfast",
+    "cookingTime": 10,
+    "difficultyLevel": "EASY",
+    "ingredients": ["oats", "milk", "honey", "dryfruits"],
+    "instructions": []
+  }
+]
