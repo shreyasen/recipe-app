@@ -33,15 +33,23 @@
     "cookingTime": 15,
     "difficultyLevel": "EASY",
     "ingredients": [
-      "onion",
-      "carrot",
-      "beans",
-      "cucumber",
-      "beat",
-      "meonise",
-      "salt"
+      "4 cups mixed greens",
+      "1 cup cherry tomatoes, halved",
+      "1/2 cucumber, sliced",
+      "1/2 red onion, thinly sliced",
+      "1/2 cup croutons",
+      "1/2 cup shredded cheese (optional)",
+      "2 tablespoons olive oil",
+      "1 tablespoon red wine vinegar",
+      "1 teaspoon Dijon mustard",
+      "Salt and pepper to taste"
     ],
-    "instructions": []
+    "instructions": [
+      "In a large bowl, combine the mixed greens, cherry tomatoes, cucumber, red onion, croutons and shredded cheese (if using).",
+      "In a small bowl, whisk together the olive oil, red wine vinegar, Dijon mustard, salt and pepper.",
+      "Pour the dressing over the salad and toss until everything is evenly coated.",
+      "Serve immediately or store in the refrigerator until ready to serve."
+    ]
   },
   {
     "id": "e3a9f6f9-105b-423b-b80e-c2aa24b359fd",
@@ -49,8 +57,18 @@
     "mealTime": "breakfast",
     "cookingTime": 5,
     "difficultyLevel": "EASY",
-    "ingredients": ["cornflakes", "milk", "honey", "dryfruits"],
-    "instructions": []
+    "ingredients": [
+      "2 cups cornflakes",
+      "1 cup milk",
+      "2 tablespoons sugar (optional)",
+      "Fresh fruit (such as berries, banana, or mango), for topping (optional)"
+    ],
+    "instructions": [
+      "In a large bowl, pour the cornflakes and add the milk.",
+      "Stir in the sugar (if using) until dissolved.",
+      "Serve the cornflakes in bowls and top with fresh fruit (if using).",
+      "Enjoy immediately."
+    ]
   },
   {
     "id": "37d8c8d2-6dff-4486-b01f-c6a9ee5e47d7",
@@ -58,7 +76,22 @@
     "mealTime": "breakfast",
     "cookingTime": 10,
     "difficultyLevel": "EASY",
-    "ingredients": ["oats", "milk", "honey", "dryfruits"],
-    "instructions": []
+    "ingredients": [
+      "1 cup rolled oats",
+      "1 cup milk",
+      "1 cup water",
+      "2 tablespoons brown sugar (optional)",
+      "1 teaspoon cinnamon (optional)",
+      "1/4 teaspoon salt",
+      "Fresh fruit (such as berries, banana, or apple), for topping (optional)",
+      "Nuts (such as almonds or pecans), for topping (optional)",
+      "Honey or maple syrup, for drizzling (optional)"
+    ],
+    "instructions": [
+      "In a medium saucepan, combine the oats, milk, water, sugar (if using), cinnamon (if using), and salt.",
+      "Cook over medium heat, stirring frequently, until the oats are soft and the mixture is creamy, about 5-7 minutes.",
+      "Serve the oats in bowls and top with fresh fruit, nuts (if using), and a drizzle of honey or maple syrup (if using).",
+      "Enjoy immediately."
+    ]
   }
 ]

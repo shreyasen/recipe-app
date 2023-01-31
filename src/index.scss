@@ -17,3 +17,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.home-page-container {
+  padding: 2rem 5rem;
+}
+
+.select-category-container {
+  @extend .home-page-container;
+}
+
+.add-recipe-container {
+  @extend .home-page-container;
+}
+
+.recipe-detail-page-container {
+  @extend .home-page-container;
+}

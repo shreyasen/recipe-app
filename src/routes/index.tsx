@@ -1,10 +1,11 @@
 import type { FC } from 'react';
 import { lazy, Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { ROUTE_NAMES } from './RouteNames';
 const LazyHome = lazy(() => import('../pages/Home'));
 const LazySelectCategory = lazy(() => import('../pages/SelectCategory'));
 const LazyRecipeDetail = lazy(() => import('../pages/RecipeDetail'));
+const LazyAddRecipe = lazy(() => import('../pages/AddRecipe'));
 
 const Router: FC = () => {
   return (
@@ -30,6 +31,14 @@ const Router: FC = () => {
         element={
           <Suspense fallback="loading">
             <LazyRecipeDetail />
+          </Suspense>
+        }
+      />
+      <Route
+        path={ROUTE_NAMES.addRecipe}
+        element={
+          <Suspense fallback="loading">
+            <LazyAddRecipe />
           </Suspense>
         }
       />
