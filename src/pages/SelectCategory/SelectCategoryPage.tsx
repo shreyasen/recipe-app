@@ -1,21 +1,25 @@
-import type { ChangeEvent, FC } from 'react';
+import type { ChangeEventHandler, FC } from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import categories from '../../data/categories.json';
+import { Card } from '../../components/Card/Card';
+
+export type Category = {
+  id: string;
+  title: string;
+  mealTime: string;
+  cookingTime: number;
+  difficultyLevel: string;
+};
+
+type FilteredCategory = Category[];
+
+type Filter = {
+  mealTime: string;
+  cookingTime: number;
+  difficultyLevel: string;
+};
 
 export const SelectCategoryPage: FC = () => {
-  type FilteredCategory = {
-    id: string;
-    title: string;
-    mealTime: string;
-    cookingTime: number;
-    difficultyLevel: string;
-  }[];
-  type Filter = {
-    mealTime: string;
-    cookingTime: number;
-    difficultyLevel: string;
-  };
   const [selectedCategory, setSelectedCategory] = useState<Filter>({
     mealTime: 'breakfast',
     cookingTime: 10,
@@ -26,10 +30,10 @@ export const SelectCategoryPage: FC = () => {
     []
   );
 
-  const filterHandler = (e: ChangeEvent<HTMLSelectElement>) => {
+  const filterHandler: ChangeEventHandler<HTMLSelectElement> = (e) => {
     setSelectedCategory({
       ...selectedCategory,
-      [e.target.name]: e.target.value,
+      [e.currentTarget.name]: e.currentTarget.value,
     });
   };
 
@@ -89,12 +93,7 @@ export const SelectCategoryPage: FC = () => {
 
         {filteredCategory.length ? (
           filteredCategory.map((category, i) => (
-            <div className="category-card" key={i}>
-              <h3>{category.title}</h3>
-              <p>Suitable for: {category.mealTime}</p>
-              <p>Cooking Time: {category.cookingTime}</p>
-              <Link to={`/recipe/${category.id}`}>See more...</Link>
-            </div>
+            <Card category={category} index={i} />
           ))
         ) : (
           <h1>No recipes found!</h1>

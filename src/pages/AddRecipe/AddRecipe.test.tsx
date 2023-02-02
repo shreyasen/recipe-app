@@ -10,6 +10,14 @@ describe('Add Recipe Page', () => {
       name: /Add Your Recipe/i,
     });
     expect(title).toBeInTheDocument();
+
+    expect(screen.getByText(/title/i)).toBeInTheDocument();
+    expect(
+      screen.getByRole('textbox', {
+        name: /title/i,
+      })
+    ).toBeInTheDocument();
+
     expect(screen.getByText(/meal time/i)).toBeInTheDocument();
     expect(
       screen.getByRole('combobox', {
