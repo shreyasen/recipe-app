@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 header {
   display: flex;
   justify-content: space-between;
@@ -10,6 +12,8 @@ header {
   border-radius: 2rem;
   cursor: pointer;
   margin-right: 1rem;
+  color: $deepPink;
+  border: 2px solid;
 }
 
 .header-add-recipe-button {
