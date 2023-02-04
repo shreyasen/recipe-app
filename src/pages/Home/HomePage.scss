@@ -1,4 +1,5 @@
 @import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
 
 .home-page-container {
   text-align: center;
@@ -17,7 +18,7 @@
   @extend .left-panel;
 }
 .home-page-title {
-  font-family: serif;
+  font-family: $serif;
   font-size: 5rem;
   @media screen and (max-width: 800px) {
     font-size: 3rem;
@@ -27,14 +28,8 @@
   font-size: 2rem;
 }
 .get-started-button {
-  padding: 0.5rem 2rem;
-  font-size: 2rem;
-  border-radius: 2rem;
+  @include primary-button;
   margin-top: 5rem;
-  cursor: pointer;
-  background-color: $deepPink;
-  color: white;
-  border: unset;
 }
 .row {
   display: flex;

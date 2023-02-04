@@ -1,0 +1,11 @@
+@import './variables.scss';
+
+@mixin primary-button {
+  padding: 0.5rem 2rem;
+  font-size: 2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  background-color: $deepPink;
+  color: white;
+  border: unset;
+}
