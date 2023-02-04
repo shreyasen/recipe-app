@@ -20,3 +20,11 @@ header {
   @extend .header-search-button;
   margin: unset;
 }
+
+.search-recipe {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
