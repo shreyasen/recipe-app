@@ -1,12 +1,18 @@
 @import '../../styles/variables.scss';
 
-header {
+.header {
   display: flex;
   justify-content: space-between;
   padding: 1rem 5rem;
 }
 
-.header-search-button {
+.header__logo {
+  text-decoration: none;
+  color: unset;
+  font-size: 1.5rem;
+}
+
+.header__search-button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 2rem;
@@ -16,12 +22,12 @@ header {
   border: 2px solid;
 }
 
-.header-add-recipe-button {
-  @extend .header-search-button;
+.header__add-recipe-button {
+  @extend .header__search-button;
   margin: unset;
 }
 
-.search-recipe {
+.header__search-recipe {
   font-size: 1rem;
   padding: 0.5rem 1rem;
   margin-right: 1rem;

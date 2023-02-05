@@ -24,23 +24,28 @@ export const Header: FC = () => {
   };
 
   return (
-    <header>
-      <Link to={ROUTE_NAMES.root}>I'm Hungry</Link>
+    <header className="header">
+      <Link to={ROUTE_NAMES.root} className="header__logo">
+        I'm Hungry
+      </Link>
       <div>
         {showSearchbox ? (
           <input
-            className="search-recipe"
+            className="header__search-recipe"
             type={'text'}
             placeholder={'Search your recipe'}
             ref={searchInputRef}
           />
         ) : (
-          <button className="header-search-button" onClick={searchboxHandler}>
+          <button className="header__search-button" onClick={searchboxHandler}>
             Search
           </button>
         )}
 
-        <button className="header-add-recipe-button" onClick={addRecipeHandler}>
+        <button
+          className="header__add-recipe-button"
+          onClick={addRecipeHandler}
+        >
           Add your recipe
         </button>
       </div>
