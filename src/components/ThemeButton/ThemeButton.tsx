@@ -1,7 +1,8 @@
-import { FC, useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../../theme/ThemeContext';
+import './ThemeButton.scss';
 
-const ThemeButton: FC = () => {
+const ThemeButton = () => {
   const { mode, dispatch } = useContext(ThemeContext);
 
   const themeHandler = () => {
@@ -11,6 +12,10 @@ const ThemeButton: FC = () => {
       dispatch({ type: 'DARKMODE' });
     }
   };
-  return <button onClick={themeHandler}>theme</button>;
+  return (
+    <div onClick={themeHandler} className="theme-switch-button">
+      <i className={`fa fa-${mode.darkMode ? 'sun' : 'moon'}-o`}></i>
+    </div>
+  );
 };
 export default ThemeButton;
