@@ -13,9 +13,16 @@ const ThemeButton = () => {
     }
   };
   return (
-    <div onClick={themeHandler} className="theme-switch-button">
-      <i className={`fa fa-${mode.darkMode ? 'sun' : 'moon'}-o`}></i>
-    </div>
+    <button
+      onClick={themeHandler}
+      className="theme-switch-button"
+      data-testid="theme-switch-button"
+    >
+      <i
+        className={`fa fa-${mode.darkMode ? 'sun' : 'moon'}-o`}
+        data-testid="theme-switch-icon"
+      ></i>
+    </button>
   );
 };
 export default ThemeButton;
