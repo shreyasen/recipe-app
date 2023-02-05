@@ -1,9 +1,9 @@
-import { FC, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import categories from '../../data/categories.json';
 import './RecipeDetailPage.scss';
 
-export const RecipeDetailPage: FC = () => {
+export const RecipeDetailPage = () => {
   const { id } = useParams();
   type Recipe = {
     id: string;
