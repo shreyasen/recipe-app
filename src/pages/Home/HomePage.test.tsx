@@ -9,7 +9,7 @@ describe('Home page', () => {
     render(<HomePage />, { wrapper: BrowserRouter });
     const title = screen.getByRole('heading', { level: 1 });
     expect(title).toHaveTextContent('Simple and Tasty Recipes');
-    expect(title).toHaveClass('home-page-title');
+    expect(title).toHaveClass('home-page__title');
     const button = screen.getByRole('button', { name: /Get Started/ });
     expect(button).toBeInTheDocument();
     expect(button).toHaveClass('get-started-button');
