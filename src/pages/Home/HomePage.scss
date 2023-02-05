@@ -1,10 +1,10 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
-.home-page-container {
+.home-page__container {
   text-align: center;
 }
-.home-page-header {
+.home-page__header {
   display: flex;
   padding-bottom: 5rem;
   @media screen and (max-width: 800px) {
@@ -17,14 +17,14 @@
 .right-panel {
   @extend .left-panel;
 }
-.home-page-title {
+.home-page__title {
   font-family: $serif;
   font-size: 5rem;
   @media screen and (max-width: 800px) {
     font-size: 3rem;
   }
 }
-.home-page-subtitle {
+.home-page__subtitle {
   font-size: 2rem;
 }
 .get-started-button {
@@ -42,10 +42,10 @@
   flex: 25%;
   max-width: 25%;
   padding: 0 4px;
-}
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-  width: 100%;
-  border-radius: 1rem;
+  img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 1rem;
+  }
 }

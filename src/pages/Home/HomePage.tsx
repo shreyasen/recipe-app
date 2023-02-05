@@ -18,11 +18,11 @@ export const HomePage: FC = () => {
     navigate(ROUTE_NAMES.selectCategory);
   };
   return (
-    <div className="home-page-container">
-      <div className="home-page-header">
+    <div className="home-page__container">
+      <div className="home-page__header">
         <div className="left-panel">
-          <h1 className="home-page-title">Simple and Tasty Recipes</h1>
-          <p className="home-page-subtitle">
+          <h1 className="home-page__title">Simple and Tasty Recipes</h1>
+          <p className="home-page__subtitle">
             Learn easily, make quickly, eat healthy, stay healthy
           </p>
           <button onClick={getStartedHandler} className="get-started-button">

@@ -1,7 +1,9 @@
+@import '../styles/variables.scss';
+
 .light-theme {
-  color: #232c57;
+  color: $darkBlue;
 }
 .dark-theme {
   color: white;
-  background-color: #232c57;
+  background-color: $darkBlue;
 }

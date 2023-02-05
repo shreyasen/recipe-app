@@ -1,4 +1,4 @@
-import type { ChangeEventHandler, FC } from 'react';
+import type { ChangeEventHandler } from 'react';
 import { useState } from 'react';
 import categories from '../../data/categories.json';
 import { Card } from '../../components/Card/Card';
@@ -20,7 +20,7 @@ type Filter = {
   difficultyLevel: string;
 };
 
-export const SelectCategoryPage: FC = () => {
+export const SelectCategoryPage = () => {
   const [selectedCategory, setSelectedCategory] = useState<Filter>({
     mealTime: 'breakfast',
     cookingTime: 10,
@@ -105,13 +105,15 @@ export const SelectCategoryPage: FC = () => {
               Continue
             </button>
           </div>
-          {filteredCategory.length ? (
-            filteredCategory.map((category, i) => (
-              <Card category={category} index={i} />
-            ))
-          ) : (
-            <h1>No recipes found!</h1>
-          )}
+          <div className="filtered-recipes__container">
+            {filteredCategory.length ? (
+              filteredCategory.map((category, i) => (
+                <Card category={category} index={i} />
+              ))
+            ) : (
+              <h1>No recipes found!</h1>
+            )}
+          </div>
         </div>
       </div>
     </div>

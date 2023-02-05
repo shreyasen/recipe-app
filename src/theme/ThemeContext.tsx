@@ -3,11 +3,11 @@ import { createContext, useReducer, ReactNode } from 'react';
 type Props = {
   children: ReactNode;
 };
-export interface ThemeState {
+interface ThemeState {
   darkMode: boolean;
 }
 
-export interface ThemeAction {
+interface ThemeAction {
   type: 'LIGHTMODE' | 'DARKMODE';
 }
 export const ThemeContext = createContext<{

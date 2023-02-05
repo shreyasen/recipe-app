@@ -21,10 +21,19 @@
   }
   select {
     font-size: 1rem;
-    color: unset;
+    color: $darkBlue;
     padding: 0.5rem;
   }
 }
 .select-category__button {
   @include primary-button;
+}
+.filtered-recipes__container {
+  display: flex;
+  justify-content: space-around;
+  .category-card {
+    border: 1px solid gray;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
 }

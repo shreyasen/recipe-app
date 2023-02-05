@@ -18,18 +18,18 @@ code {
     monospace;
 }
 
-.home-page-container {
+.home-page__container {
   padding: 2rem 5rem;
 }
 
-.select-category-container {
-  @extend .home-page-container;
+.select-category__container {
+  @extend .home-page__container;
 }
 
 .add-recipe-container {
-  @extend .home-page-container;
+  @extend .home-page__container;
 }
 
 .recipe-detail-page-container {
-  @extend .home-page-container;
+  @extend .home-page__container;
 }
