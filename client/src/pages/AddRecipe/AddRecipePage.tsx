@@ -1,6 +1,6 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 
-export const AddRecipePage = () => {
+export const AddRecipePage: FC = () => {
   type Category = {
     title: string;
     mealTime: string;
