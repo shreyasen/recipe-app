@@ -13,7 +13,7 @@ const ThemeButton = () => {
     }
   };
   return (
-    <button
+    <div
       onClick={themeHandler}
       className="theme-switch-button"
       data-testid="theme-switch-button"
@@ -22,7 +22,7 @@ const ThemeButton = () => {
         className={`fa fa-${mode.darkMode ? 'sun' : 'moon'}-o`}
         data-testid="theme-switch-icon"
       ></i>
-    </button>
+    </div>
   );
 };
 export default ThemeButton;
