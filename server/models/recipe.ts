@@ -18,6 +18,11 @@ const recipeSchema = new Schema({
     type: String,
     required: true,
   },
+  isPopular: {
+    type: Boolean,
+    required: false,
+    default: false,
+  },
   ingredients: {
     type: [String],
     required: true,

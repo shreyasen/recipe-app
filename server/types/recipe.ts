@@ -5,6 +5,7 @@ export interface IRecipe extends Document {
   mealTime: string;
   cookingTime: number;
   difficultyLevel: string;
+  isPopular: boolean;
   ingredients: string[];
   instructions: string[];
 }
