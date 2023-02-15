@@ -1,3 +1,5 @@
+import * as dotenv from "dotenv"; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
 import cors from "cors";
 import express, { Express } from "express";
 import bodyParser from "body-parser";
@@ -11,8 +13,7 @@ app.use(cors());
 
 app.use("/recipe", router);
 
-const CONNECTION_URL: string =
-  "mongodb+srv://shreyasen:Shreya12345@cluster0.zofcwto.mongodb.net/recipes?retryWrites=true&w=majority";
+const CONNECTION_URL: string = process.env.CONNECTION_URL;
 const PORT: string | number = process.env.PORT || 5000;
 const options = { useNewUrlParser: true, useUnifiedTopology: true };
 
