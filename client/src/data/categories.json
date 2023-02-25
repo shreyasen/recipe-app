@@ -1,0 +1,97 @@
+[
+  {
+    "id": "6c2822b3-3be3-4e33-a956-a40e00b5f692",
+    "title": "fried rice",
+    "mealTime": "dinner",
+    "cookingTime": 45,
+    "difficultyLevel": "MEDIUM",
+    "ingredients": [
+      "2 cups cooked rice",
+      "2 tablespoons oil (vegetable or olive oil)",
+      "1 small onion, diced",
+      "2 cloves garlic, minced",
+      "1 cup diced vegetables (carrots, peas, corn)",
+      "2 eggs, lightly beaten",
+      "2 tablespoons soy sauce",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "Heat oil in a large pan or wok over medium heat.",
+      "Add onion and garlic and cook until softened, about 2 minutes.",
+      "Add diced vegetables and cook until tender, about 3 minutes.",
+      "Push the vegetables to one side of the pan and pour the beaten eggs on the other side. Scramble until fully cooked.",
+      "Add the cooked rice and stir to combine with the vegetables and eggs.",
+      "Stir in soy sauce and season with salt and pepper to taste.",
+      "Cook for an additional 2-3 minutes, until heated through and evenly mixed.",
+      "Serve hot."
+    ]
+  },
+  {
+    "id": "06c55913-4877-42ac-a92e-646d26ed8799",
+    "title": "salad",
+    "mealTime": "lunch",
+    "cookingTime": 15,
+    "difficultyLevel": "EASY",
+    "ingredients": [
+      "4 cups mixed greens",
+      "1 cup cherry tomatoes, halved",
+      "1/2 cucumber, sliced",
+      "1/2 red onion, thinly sliced",
+      "1/2 cup croutons",
+      "1/2 cup shredded cheese (optional)",
+      "2 tablespoons olive oil",
+      "1 tablespoon red wine vinegar",
+      "1 teaspoon Dijon mustard",
+      "Salt and pepper to taste"
+    ],
+    "instructions": [
+      "In a large bowl, combine the mixed greens, cherry tomatoes, cucumber, red onion, croutons and shredded cheese (if using).",
+      "In a small bowl, whisk together the olive oil, red wine vinegar, Dijon mustard, salt and pepper.",
+      "Pour the dressing over the salad and toss until everything is evenly coated.",
+      "Serve immediately or store in the refrigerator until ready to serve."
+    ]
+  },
+  {
+    "id": "e3a9f6f9-105b-423b-b80e-c2aa24b359fd",
+    "title": "cornflakes",
+    "mealTime": "breakfast",
+    "cookingTime": 5,
+    "difficultyLevel": "EASY",
+    "ingredients": [
+      "2 cups cornflakes",
+      "1 cup milk",
+      "2 tablespoons sugar (optional)",
+      "Fresh fruit (such as berries, banana, or mango), for topping (optional)"
+    ],
+    "instructions": [
+      "In a large bowl, pour the cornflakes and add the milk.",
+      "Stir in the sugar (if using) until dissolved.",
+      "Serve the cornflakes in bowls and top with fresh fruit (if using).",
+      "Enjoy immediately."
+    ]
+  },
+  {
+    "id": "37d8c8d2-6dff-4486-b01f-c6a9ee5e47d7",
+    "title": "oats",
+    "mealTime": "breakfast",
+    "cookingTime": 10,
+    "difficultyLevel": "EASY",
+    "ingredients": [
+      "1 cup rolled oats",
+      "1 cup milk",
+      "1 cup water",
+      "2 tablespoons brown sugar (optional)",
+      "1 teaspoon cinnamon (optional)",
+      "1/4 teaspoon salt",
+      "Fresh fruit (such as berries, banana, or apple), for topping (optional)",
+      "Nuts (such as almonds or pecans), for topping (optional)",
+      "Honey or maple syrup, for drizzling (optional)"
+    ],
+    "instructions": [
+      "In a medium saucepan, combine the oats, milk, water, sugar (if using), cinnamon (if using), and salt.",
+      "Cook over medium heat, stirring frequently, until the oats are soft and the mixture is creamy, about 5-7 minutes.",
+      "Serve the oats in bowls and top with fresh fruit, nuts (if using), and a drizzle of honey or maple syrup (if using).",
+      "Enjoy immediately."
+    ]
+  }
+]

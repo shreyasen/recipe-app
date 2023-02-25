@@ -1,0 +1,39 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.select-category__header {
+  text-align: center;
+}
+.select-category__title {
+  font-family: $serif;
+  font-size: 3rem;
+}
+.select-category__options {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.select-category__dropdown {
+  padding: 0 1rem;
+  label {
+    font-size: 1.25rem;
+    padding-right: 1rem;
+  }
+  select {
+    font-size: 1rem;
+    color: $darkBlue;
+    padding: 0.5rem;
+  }
+}
+.select-category__button {
+  @include primary-button;
+}
+.filtered-recipes__container {
+  display: flex;
+  justify-content: space-around;
+  .category-card {
+    border: 1px solid gray;
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+}

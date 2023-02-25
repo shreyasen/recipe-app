@@ -1,0 +1,46 @@
+@import '../../styles/variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5rem;
+}
+
+.header__logo {
+  text-decoration: none;
+  color: unset;
+  font-size: 1.5rem;
+}
+
+.header__search-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  color: $deepPink;
+  border: 2px solid;
+}
+
+.header__add-recipe-button {
+  @extend .header__search-button;
+  margin: unset;
+}
+
+.header__search-recipe {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  border: 1px solid gray;
+  border-radius: 1rem;
+}
+
+.header__search-results {
+  position: absolute;
+  border: 1px solid lightgray;
+  width: 14rem;
+  border-radius: 0.5rem;
+  div {
+    padding: 0.5rem;
+  }
+}
