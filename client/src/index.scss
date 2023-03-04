@@ -22,10 +22,12 @@ code {
   padding: 2rem 5rem;
 }
 
-.select-category__container {
+.select-category__header {
   @extend .home-page__container;
 }
-
+.select-category__popular {
+  @extend .home-page__container;
+}
 .add-recipe-container {
   @extend .home-page__container;
 }

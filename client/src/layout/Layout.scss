@@ -6,4 +6,12 @@
 .dark-theme {
   color: white;
   background-color: $darkBlue;
+  .select-category__container {
+    @extend .dark-theme;
+  }
+  .popular-list-item-wrapper {
+    &:hover {
+      box-shadow: 0 0 10px rgba(245, 243, 243, 0.5);
+    }
+  }
 }
