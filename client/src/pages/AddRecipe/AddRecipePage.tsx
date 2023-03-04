@@ -1,31 +1,64 @@
 import { ChangeEvent, FC, useState, FormEvent } from 'react';
 import { addRecipe } from '../../apis/recipeApis';
-// import FileBase from 'react-file-base64';
+import Input from '../../components/Input/Input';
 
-export type Category = {
+type Category = {
   title: string;
   mealTime: string;
   cookingTime: number;
   difficultyLevel: string;
-  ingredients: string[];
-  instructions: string[];
   image: File | null;
 };
+type ObjectType = {
+  count: number;
+  value: string;
+};
+
 export const AddRecipePage: FC = () => {
   const [category, setCategory] = useState<Category>({
     title: '',
     mealTime: 'breakfast',
     cookingTime: 10,
     difficultyLevel: 'EASY',
-    ingredients: [],
-    instructions: [],
     image: null,
   });
+
+  const [ingredients, setIngredients] = useState<ObjectType[]>([
+    { count: 1, value: '' },
+  ]);
+
+  const [instructions, setInstructions] = useState<ObjectType[]>([
+    { count: 1, value: '' },
+  ]);
 
   const changeHandler = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     setCategory({ ...category, [e.target.name]: e.target.value });
+  };
+
+  const changeValue = (obj: ObjectType, e: ChangeEvent<HTMLInputElement>) => {
+    obj.value = e.target.value;
+  };
+
+  const addIngredient = () => {
+    if (ingredients[ingredients.length - 1].value) {
+      const newInput = {
+        count: ingredients.length + 1,
+        value: '',
+      };
+      setIngredients([...ingredients, newInput]);
+    }
+  };
+
+  const addInstruction = () => {
+    if (instructions[instructions.length - 1].value) {
+      const newInput = {
+        count: instructions.length + 1,
+        value: '',
+      };
+      setInstructions([...instructions, newInput]);
+    }
   };
 
   const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,17 +70,21 @@ export const AddRecipePage: FC = () => {
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
+    const ingArr = ingredients
+      .filter((ing) => ing.value)
+      .map((ing) => ing.value);
+
+    const insArr = instructions
+      .filter((ing) => ing.value)
+      .map((ing) => ing.value);
+
     const formDataToSend = new FormData();
     formDataToSend.append('title', category.title);
     formDataToSend.append('mealTime', category.mealTime);
     formDataToSend.append('cookingTime', category.cookingTime.toString());
     formDataToSend.append('difficultyLevel', category.difficultyLevel);
-    formDataToSend.append('ingredients', JSON.stringify(category.ingredients));
-    formDataToSend.append(
-      'instructions',
-      JSON.stringify(category.instructions)
-    );
-    console.log(category.image);
+    formDataToSend.append('ingredients', JSON.stringify(ingArr));
+    formDataToSend.append('instructions', JSON.stringify(insArr));
     if (category.image) {
       formDataToSend.append('image', category.image);
     }
@@ -115,6 +152,51 @@ export const AddRecipePage: FC = () => {
             <option value={'DIFFICULT'}>Difficult</option>
           </select>
         </div>
+
+        <div>
+          <>
+            <label>Ingredients</label>
+            {ingredients.map((ing) =>
+              ing.count < ingredients.length ? (
+                <div key={ing.count}>
+                  <span>{ing.count}.&nbsp;</span>
+                  <span>{ing.value}</span>
+                </div>
+              ) : (
+                <Input onChange={(e) => changeValue(ing, e)} key={ing.count} />
+              )
+            )}
+          </>
+
+          <span>
+            <button type="button" onClick={addIngredient}>
+              +
+            </button>
+          </span>
+        </div>
+
+        <div>
+          <>
+            <label>Instructions</label>
+            {instructions.map((ins) =>
+              ins.count < instructions.length ? (
+                <div key={ins.count}>
+                  <span>{ins.count}.&nbsp;</span>
+                  <span>{ins.value}</span>
+                </div>
+              ) : (
+                <Input onChange={(e) => changeValue(ins, e)} key={ins.count} />
+              )
+            )}
+          </>
+
+          <span>
+            <button type="button" onClick={addInstruction}>
+              +
+            </button>
+          </span>
+        </div>
+
         <div>
           <input type="file" onChange={handleImageChange} />
           {/* <FileBase type="file" multiple={false} onDone={({ base64 }) => setCategory({ ...category, image: base64 })} /> */}
