@@ -8,4 +8,5 @@ export interface IRecipe extends Document {
   isPopular: boolean;
   ingredients: string[];
   instructions: string[];
+  image: string;
 }

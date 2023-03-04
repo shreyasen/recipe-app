@@ -1,18 +1,25 @@
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, useState, FormEvent } from 'react';
+import { addRecipe } from '../../apis/recipeApis';
+// import FileBase from 'react-file-base64';
 
+export type Category = {
+  title: string;
+  mealTime: string;
+  cookingTime: number;
+  difficultyLevel: string;
+  ingredients: string[];
+  instructions: string[];
+  image: File | null;
+};
 export const AddRecipePage: FC = () => {
-  type Category = {
-    title: string;
-    mealTime: string;
-    cookingTime: number;
-    difficultyLevel: string;
-  };
-
   const [category, setCategory] = useState<Category>({
     title: '',
     mealTime: 'breakfast',
     cookingTime: 10,
     difficultyLevel: 'EASY',
+    ingredients: [],
+    instructions: [],
+    image: null,
   });
 
   const changeHandler = (
@@ -21,10 +28,38 @@ export const AddRecipePage: FC = () => {
     setCategory({ ...category, [e.target.name]: e.target.value });
   };
 
+  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    if (event.target.files && event.target.files.length > 0) {
+      setCategory({ ...category, image: event.target.files[0] });
+    }
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const formDataToSend = new FormData();
+    formDataToSend.append('title', category.title);
+    formDataToSend.append('mealTime', category.mealTime);
+    formDataToSend.append('cookingTime', category.cookingTime.toString());
+    formDataToSend.append('difficultyLevel', category.difficultyLevel);
+    formDataToSend.append('ingredients', JSON.stringify(category.ingredients));
+    formDataToSend.append(
+      'instructions',
+      JSON.stringify(category.instructions)
+    );
+    console.log(category.image);
+    if (category.image) {
+      formDataToSend.append('image', category.image);
+    }
+
+    console.log(formDataToSend.values());
+    addRecipe(formDataToSend);
+  };
+
   return (
     <div className="add-recipe-container">
       <h1>Add Your Recipe</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="title">Title</label>
           <input
@@ -79,6 +114,10 @@ export const AddRecipePage: FC = () => {
             <option value={'MEDIUM'}>Medium</option>
             <option value={'DIFFICULT'}>Difficult</option>
           </select>
+        </div>
+        <div>
+          <input type="file" onChange={handleImageChange} />
+          {/* <FileBase type="file" multiple={false} onDone={({ base64 }) => setCategory({ ...category, image: base64 })} /> */}
         </div>
         <div>
           <button>Submit</button>

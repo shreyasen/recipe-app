@@ -1,4 +1,5 @@
 import { Router } from "express";
+import multer from "multer";
 import {
   addRecipe,
   searchRecipe,
@@ -7,7 +8,9 @@ import {
 
 const router: Router = Router();
 
-router.post("/add", addRecipe);
+const upload = multer({ dest: "uploads/" });
+
+router.post("/add", upload.single("image"), addRecipe);
 router.get("/search", searchRecipe);
 router.get("/popular", getPopularRecipes);
 
