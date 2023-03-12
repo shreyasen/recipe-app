@@ -3,4 +3,6 @@ export const ROUTE_NAMES = {
   selectCategory: '/select-category',
   recipeDetail: '/recipe',
   addRecipe: '/add-recipe',
+  signup: '/signup',
+  signin: '/signin',
 };

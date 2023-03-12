@@ -27,7 +27,7 @@ export const createUser = async (req: Request, res: Response) => {
   }
 };
 
-export const authenticateUser = async (req, res) => {
+export const authenticateUser = async (req: Request, res: Response) => {
   const { email, password } = req.body;
   try {
     const user = await User.findOne({ email });
@@ -43,5 +43,7 @@ export const authenticateUser = async (req, res) => {
     } else {
       res.status(401).json({ message: "Invalid credentials!" });
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error);
+  }
 };
