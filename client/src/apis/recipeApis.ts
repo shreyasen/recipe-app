@@ -1,8 +1,12 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
 import API_ENDPOINTS from '../constants/apiEndPoints';
 
 const addRecipeHeader = {
-  headers: { 'Content-Type': 'multipart/form-data' },
+  headers: {
+    'Content-Type': 'multipart/form-data',
+    Authorization: `Bearer ${Cookies.get('JWT-TOKEN')}`,
+  },
 };
 const getHeader = {
   headers: { 'Content-type': 'application/json' },

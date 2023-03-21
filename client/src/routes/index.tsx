@@ -6,6 +6,8 @@ const LazyHome = lazy(() => import('../pages/Home'));
 const LazySelectCategory = lazy(() => import('../pages/SelectCategory'));
 const LazyRecipeDetail = lazy(() => import('../pages/RecipeDetail'));
 const LazyAddRecipe = lazy(() => import('../pages/AddRecipe'));
+const LazySignup = lazy(() => import('../pages/Signup'));
+const LazySignin = lazy(() => import('../pages/Signin'));
 
 const Router: FC = () => {
   return (
@@ -39,6 +41,22 @@ const Router: FC = () => {
         element={
           <Suspense fallback="loading">
             <LazyAddRecipe />
+          </Suspense>
+        }
+      />
+      <Route
+        path={ROUTE_NAMES.signup}
+        element={
+          <Suspense fallback="loading">
+            <LazySignup />
+          </Suspense>
+        }
+      />
+      <Route
+        path={ROUTE_NAMES.signin}
+        element={
+          <Suspense fallback="loading">
+            <LazySignin />
           </Suspense>
         }
       />

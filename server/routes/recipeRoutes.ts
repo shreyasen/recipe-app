@@ -5,12 +5,13 @@ import {
   searchRecipe,
   getPopularRecipes,
 } from "../controllers/recipes";
+import { verifyToken } from "../controllers/auth";
 
 const router: Router = Router();
 
 const upload = multer({ dest: "uploads/" });
 
-router.post("/add", upload.single("image"), addRecipe);
+router.post("/add", upload.single("image"), verifyToken, addRecipe);
 router.get("/search", searchRecipe);
 router.get("/popular", getPopularRecipes);
 

@@ -7,6 +7,7 @@ import Recipe from "../../models/recipe";
 
 interface CustomRequest extends Request {
   file: File;
+  userEmail: string;
 }
 
 export const addRecipe = async (req: CustomRequest, res: Response) => {
@@ -21,6 +22,7 @@ export const addRecipe = async (req: CustomRequest, res: Response) => {
   const image = req.file ? req.file.filename : null;
 
   try {
+    console.log(req.userEmail);
     const newRecipe: IRecipe = new Recipe({
       title,
       mealTime,
