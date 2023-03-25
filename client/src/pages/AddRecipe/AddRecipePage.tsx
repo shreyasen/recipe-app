@@ -1,6 +1,10 @@
-import { ChangeEvent, FC, useState, FormEvent } from 'react';
+import { ChangeEvent, FC, useState, FormEvent, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { addRecipe } from '../../apis/recipeApis';
 import Input from '../../components/Input/Input';
+import { ROUTE_NAMES } from '../../routes/RouteNames';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { getUserDetails } from '../../features/userSlice';
 
 type Category = {
   title: string;
@@ -15,6 +19,12 @@ type ObjectType = {
 };
 
 export const AddRecipePage: FC = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const authDetails = useAppSelector((state) => state.authDetails);
+  const userDetails = useAppSelector((state) => state.userDetails);
+
   const [category, setCategory] = useState<Category>({
     title: '',
     mealTime: 'breakfast',
@@ -88,10 +98,12 @@ export const AddRecipePage: FC = () => {
     if (category.image) {
       formDataToSend.append('image', category.image);
     }
-
-    console.log(formDataToSend.values());
     addRecipe(formDataToSend);
   };
+
+  if (userDetails.error) {
+    navigate(ROUTE_NAMES.signin);
+  }
 
   return (
     <div className="add-recipe-container">

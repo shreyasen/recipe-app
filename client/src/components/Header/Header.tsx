@@ -1,6 +1,7 @@
 import type { ChangeEvent, FC } from 'react';
 import { useState, useRef, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 import './Header.scss';
 import { ROUTE_NAMES } from '../../routes/RouteNames';
 import { searchRecipe } from '../../apis/recipeApis';
@@ -33,7 +34,8 @@ export const Header: FC = () => {
   };
 
   const addRecipeHandler = () => {
-    navigate(ROUTE_NAMES.addRecipe);
+    if (Cookies.get('JWT-TOKEN')) navigate(ROUTE_NAMES.addRecipe);
+    else navigate(ROUTE_NAMES.signin);
   };
 
   return (
