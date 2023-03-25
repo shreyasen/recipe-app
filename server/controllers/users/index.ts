@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import User from "../../models/user";
+import { AuthenticatedRequest } from "../../types/authenticatedRequest";
 
 export const createUser = async (req: Request, res: Response) => {
   const { firstName, lastName, email, password } = req.body;
@@ -45,5 +46,21 @@ export const authenticateUser = async (req: Request, res: Response) => {
     }
   } catch (error) {
     console.log(error);
+  }
+};
+
+export const getUserDetails = async (
+  req: AuthenticatedRequest,
+  res: Response
+) => {
+  const { userEmail } = req;
+  try {
+    const user = await User.findOne(
+      { email: userEmail },
+      { firstName: 1, lastName: 1, email: 1 }
+    );
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 };

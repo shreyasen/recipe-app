@@ -1,15 +1,20 @@
-import { ChangeEvent, FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import axios from 'axios';
 import Cookies from 'js-cookie';
 import { ROUTE_NAMES } from '../../routes/RouteNames';
+import { authenticateUser } from '../../features/authSlice';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
 
-type CredentialType = {
+export type CredentialType = {
   email: string;
   password: string;
 };
 const Signin = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
+  const authDetails = useAppSelector((state) => state.authDetails);
+
   const [credentials, setCredentials] = useState<CredentialType>({
     email: '',
     password: '',
@@ -21,14 +26,12 @@ const Signin = () => {
 
   const handleSignin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios
-      .post('http://localhost:5000/user/auth', credentials)
-      .then((res) => {
-        Cookies.set('JWT-TOKEN', res.data.token);
-        navigate(ROUTE_NAMES.addRecipe);
-      })
-      .catch((err) => console.log(err));
+    dispatch(authenticateUser(credentials));
   };
+
+  useEffect(() => {
+    if (Cookies.get('JWT-TOKEN')) navigate(ROUTE_NAMES.root);
+  }, [navigate]);
 
   return (
     <div className="form-box">
