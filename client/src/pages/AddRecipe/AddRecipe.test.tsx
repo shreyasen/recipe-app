@@ -1,10 +1,17 @@
 import { screen, render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import { AddRecipePage } from './AddRecipePage';
+import { Provider } from 'react-redux';
+import store from '../../app/store';
 
 describe('Add Recipe Page', () => {
   test('rendering properly', () => {
-    render(<AddRecipePage />, { wrapper: BrowserRouter });
+    render(
+      <Provider store={store}>
+        <AddRecipePage />
+      </Provider>,
+      { wrapper: BrowserRouter }
+    );
     const title = screen.getByRole('heading', {
       level: 1,
       name: /Add Your Recipe/i,
