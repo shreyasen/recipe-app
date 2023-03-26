@@ -20,6 +20,9 @@
   margin-right: 1rem;
   color: $deepPink;
   border: 2px solid;
+  &:hover {
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
 }
 
 .header__add-recipe-button {
