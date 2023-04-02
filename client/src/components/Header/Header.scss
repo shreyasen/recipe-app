@@ -4,6 +4,10 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem 5rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: white;
 }
 
 .header__logo {

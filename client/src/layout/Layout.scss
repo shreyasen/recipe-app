@@ -1,11 +1,17 @@
 @import '../styles/variables.scss';
 
+.body-container {
+  padding-top: 5rem;
+}
 .light-theme {
   color: $darkBlue;
 }
 .dark-theme {
   color: white;
   background-color: $darkBlue;
+  .header {
+    background-color: $darkBlue;
+  }
   .select-category__container {
     @extend .dark-theme;
   }

@@ -1,8 +1,20 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+// .signin__container {
+//   background-image: url('../../assets/common-background.png');
+//   background-position: center; /* Center the image */
+//   background-repeat: no-repeat; /* Do not repeat the image */
+//   background-size: cover;
+// }
 .form-box {
   @include form-container;
+}
+.form-left {
+  @include form-left;
+}
+.form-right {
+  @include form-right;
 }
 .form-header {
   @include form-header;

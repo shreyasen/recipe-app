@@ -28,8 +28,10 @@ const Layout: FC<Props> = ({ children }) => {
         }`}
       >
         <Header />
-        {children}
-        <Footer />
+        <div className="body-container">
+          {children}
+          <Footer />
+        </div>
         <ThemeButton />
       </div>
     </BrowserRouter>
