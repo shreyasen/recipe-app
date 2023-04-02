@@ -28,10 +28,14 @@ code {
 .select-category__popular {
   @extend .home-page__container;
 }
-.add-recipe-container {
+.add-recipe__container {
   @extend .home-page__container;
 }
 
 .recipe-detail-page-container {
+  @extend .home-page__container;
+}
+
+.signin__container {
   @extend .home-page__container;
 }

@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 import API_ENDPOINTS from '../constants/apiEndPoints';
 
 const initialState = {
-  user: {},
+  user: null,
   error: '',
 };
 
@@ -28,7 +28,7 @@ const userSlice = createSlice({
       state.error = '';
     });
     builder.addCase(getUserDetails.rejected, (state, action) => {
-      state.user = {};
+      state.user = null;
       state.error = action.error.message || 'Something went wrong';
     });
   },

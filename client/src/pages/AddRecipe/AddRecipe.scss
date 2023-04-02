@@ -1,0 +1,22 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.add-recipe__input-container {
+  margin-bottom: 1rem;
+}
+.add-recipe__input-text {
+  font-size: 1rem;
+  padding: 1rem;
+  width: 30rem;
+}
+.fa-circle-plus {
+  font-size: 2rem;
+  margin-left: 1rem;
+  vertical-align: middle;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.add-recipe__button {
+  @include primary-button;
+}

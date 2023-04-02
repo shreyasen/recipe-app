@@ -8,4 +8,57 @@
   background-color: $deepPink;
   color: white;
   border: unset;
+  transition: transform 0.2s ease-in-out;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@mixin form-container {
+  width: 50%;
+  margin: auto;
+  margin-top: 5rem;
+  border: 1px solid $lightgray;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+@mixin form-header {
+  font-size: 2rem;
+  margin: 1rem 0.5rem;
+}
+
+@mixin form-header-text {
+  margin-bottom: 1rem;
+}
+
+@mixin form-input-text {
+  box-sizing: border-box;
+  width: 95%;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 1rem;
+}
+
+@mixin form-button {
+  width: 10rem;
+  font-size: 1rem;
+  padding: 1rem;
+  color: $deepPink;
+  font-weight: 600;
+  border: 2px solid $deepPink;
+  border-radius: 2rem;
+  margin-bottom: 1rem;
+  transition-duration: 0.6s;
+  //   transition: transform 0.2s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    background-color: $deepPink;
+    color: antiquewhite;
+    box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
+    // transform: translateY(-2px);
+    // box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 20%),
+    //   0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%);
+  }
 }

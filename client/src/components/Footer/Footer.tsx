@@ -1,5 +1,6 @@
 import type { FC } from 'react';
+import './Footer.scss';
 
 export const Footer: FC = () => {
-  return <h1>Footer</h1>;
+  return <footer>&copy;Copyright. All rights reserved.</footer>;
 };
