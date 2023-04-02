@@ -1,0 +1,18 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.form-box {
+  @include form-container;
+}
+.form-header {
+  @include form-header;
+}
+.form-header-text {
+  @include form-header-text;
+}
+.input-text {
+  @include form-input-text;
+}
+.form-button {
+  @include form-button;
+}
